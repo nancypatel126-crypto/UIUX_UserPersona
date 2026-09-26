@@ -1,0 +1,1472 @@
+/* =====================================================
+   VINIX - USER PERSONA
+   UI/UX Design Task 2
+   style.css
+   ===================================================== */
+
+
+/* ================= ROOT ================= */
+
+:root {
+
+    --primary: #6c63ff;
+    --primary-dark: #5548e8;
+
+    --background: #f7f8fc;
+    --surface: #ffffff;
+
+    --text: #1f2937;
+    --text-light: #6b7280;
+
+    --border: #e5e7eb;
+
+    --header: rgba(255, 255, 255, 0.92);
+
+    --shadow:
+        0 12px 35px rgba(31, 41, 55, 0.08);
+
+    --radius: 20px;
+
+    --transition: 0.3s ease;
+}
+
+
+/* ================= DARK THEME ================= */
+
+body.dark {
+
+    --background: #111827;
+    --surface: #1f2937;
+
+    --text: #f9fafb;
+    --text-light: #cbd5e1;
+
+    --border: #374151;
+
+    --header: rgba(17, 24, 39, 0.94);
+
+    --shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ================= RESET ================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+button {
+
+    font-family: inherit;
+
+}
+
+
+.container {
+
+    width: min(1120px, 92%);
+
+    margin: auto;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: var(--header);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.nav-container {
+
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+/* ================= LOGO ================= */
+
+.logo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.1;
+
+}
+
+
+.logo span {
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    color: var(--primary);
+
+}
+
+
+.logo small {
+
+    font-size: 11px;
+
+    color: var(--text-light);
+
+    margin-top: 4px;
+
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.nav-link {
+
+    position: relative;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: var(--text-light);
+
+    padding: 8px 0;
+
+    transition:
+        color var(--transition);
+
+}
+
+
+.nav-link:hover,
+.nav-link.active {
+
+    color: var(--primary);
+
+}
+
+
+.nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--primary);
+
+    border-radius: 10px;
+
+    transition:
+        width var(--transition);
+
+}
+
+
+.nav-link:hover::after,
+.nav-link.active::after {
+
+    width: 100%;
+
+}
+
+
+/* ================= THEME BUTTON ================= */
+
+.theme-toggle {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+
+}
+
+
+.theme-toggle:hover {
+
+    transform: rotate(15deg);
+
+}
+
+
+/* ================= MENU BUTTON ================= */
+
+.menu-btn {
+
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 90px 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(108, 99, 255, 0.13),
+            transparent 35%
+        ),
+        var(--background);
+
+}
+
+
+.hero-content {
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 0.8fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+}
+
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 14px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(108, 99, 255, 0.1);
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero-text h1 {
+
+    font-size: clamp(
+        42px,
+        6vw,
+        70px
+    );
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 24px;
+
+}
+
+
+.hero-text h1 span {
+
+    display: block;
+
+    color: var(--primary);
+
+}
+
+
+.hero-text p {
+
+    max-width: 600px;
+
+    color: var(--text-light);
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ================= PRIMARY BUTTON ================= */
+
+.primary-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 22px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+
+}
+
+
+.primary-btn:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(108, 99, 255, 0.25);
+
+}
+
+
+/* ================= HERO CARD ================= */
+
+.hero-card {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform var(--transition);
+
+}
+
+
+.hero-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+.avatar {
+
+    width: 120px;
+
+    height: 120px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #8b7cff
+        );
+
+    color: white;
+
+    font-size: 35px;
+
+    font-weight: 800;
+
+}
+
+
+.hero-card h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.hero-card > p {
+
+    color: var(--text-light);
+
+}
+
+
+.hero-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+.hero-info span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+}
+
+
+.hero-info i {
+
+    color: var(--primary);
+
+}
+
+
+/* ================= SECTION ================= */
+
+.section {
+
+    padding: 100px 0;
+
+}
+
+
+.alternate {
+
+    background: var(--surface);
+
+}
+
+
+/* ================= SECTION HEADING ================= */
+
+.section-heading {
+
+    max-width: 700px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.section-heading > span {
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size: clamp(
+        30px,
+        5vw,
+        46px
+    );
+
+    line-height: 1.15;
+
+    margin: 12px 0 15px;
+
+}
+
+
+.section-heading p {
+
+    color: var(--text-light);
+
+    font-size: 16px;
+
+}
+
+
+/* ================= PERSONA GRID ================= */
+
+.persona-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap: 24px;
+
+}
+
+
+.persona-card {
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+}
+
+
+.persona-card:hover {
+
+    transform: translateY(-6px);
+
+}
+
+
+.profile-card {
+
+    text-align: center;
+
+}
+
+
+.profile-avatar {
+
+    width: 90px;
+
+    height: 90px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(108, 99, 255, 0.12);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+}
+
+
+.profile-card h3 {
+
+    font-size: 24px;
+
+}
+
+
+.role {
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+
+}
+
+
+.profile-details {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.profile-details div {
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background:
+        var(--background);
+
+}
+
+
+.profile-details strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: var(--text-light);
+
+    margin-bottom: 4px;
+
+}
+
+
+.profile-details span {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+/* ================= CARD ICON ================= */
+
+.card-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(108, 99, 255, 0.1);
+
+    color: var(--primary);
+
+    font-size: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.persona-card h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.persona-card p {
+
+    color: var(--text-light);
+
+    font-size: 15px;
+
+    margin-bottom: 14px;
+
+}
+
+
+/* ================= LIST ================= */
+
+.persona-card ul {
+
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.persona-card li {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+
+}
+
+
+.persona-card li i {
+
+    color: var(--primary);
+
+    margin-top: 5px;
+
+}
+
+
+/* ================= GOALS ================= */
+
+.goals-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.goal-card {
+
+    padding: 30px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--background);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+}
+
+
+.goal-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow);
+
+}
+
+
+.goal-card > i {
+
+    font-size: 25px;
+
+    color: var(--primary);
+
+    margin-bottom: 20px;
+
+}
+
+
+.goal-card h3 {
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.goal-card p {
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+}
+
+
+/* ================= PAIN POINTS ================= */
+
+.pain-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.pain-card {
+
+    padding: 30px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    transition:
+        transform var(--transition);
+
+}
+
+
+.pain-card:hover {
+
+    transform: translateY(-6px);
+
+}
+
+
+.pain-card > i {
+
+    color: var(--primary);
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.pain-card h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.pain-card p {
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+}
+
+
+/* ================= MOTIVATIONS ================= */
+
+.motivation-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.motivation-card {
+
+    padding: 30px;
+
+    background: var(--background);
+
+    border-radius: var(--radius);
+
+    border: 1px solid var(--border);
+
+}
+
+
+.motivation-card span {
+
+    display: inline-flex;
+
+    margin-bottom: 25px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+}
+
+
+.motivation-card h3 {
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.motivation-card p {
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+}
+
+
+/* ================= INSIGHTS ================= */
+
+.insights-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.insight-card {
+
+    padding: 30px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--surface);
+
+}
+
+
+.insight-card > i {
+
+    color: var(--primary);
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.insight-card h3 {
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.insight-card p {
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+}
+
+
+/* ================= SUMMARY ================= */
+
+.summary-card {
+
+    margin-top: 60px;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(108, 99, 255, 0.12),
+            rgba(139, 124, 255, 0.05)
+        );
+
+    border: 1px solid
+        rgba(108, 99, 255, 0.2);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+}
+
+
+.summary-card > div:first-child {
+
+    max-width: 700px;
+
+}
+
+
+.summary-card span {
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.summary-card h2 {
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    margin: 12px 0;
+
+}
+
+
+.summary-card p {
+
+    color: var(--text-light);
+
+}
+
+
+.summary-icon {
+
+    min-width: 100px;
+
+    height: 100px;
+
+    border-radius: 25px;
+
+    background: var(--primary);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+
+    padding: 35px 0;
+
+    background: var(--surface);
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.footer-content {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.footer h3 {
+
+    color: var(--primary);
+
+    font-size: 22px;
+
+}
+
+
+.footer p {
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+}
+
+
+/* ================= RESPONSIVE 1000px ================= */
+
+@media (max-width: 1000px) {
+
+    .hero-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .hero-card {
+
+        max-width: 450px;
+
+        margin: auto;
+
+    }
+
+
+    .persona-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .goals-grid,
+    .pain-grid,
+    .motivation-grid,
+    .insights-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* ================= RESPONSIVE 760px ================= */
+
+@media (max-width: 760px) {
+
+    .menu-btn {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+    }
+
+
+    .navbar {
+
+        position: absolute;
+
+        top: 76px;
+
+        left: 0;
+
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 15px 6% 25px;
+
+        background: var(--surface);
+
+        border-bottom:
+            1px solid var(--border);
+
+        box-shadow: var(--shadow);
+
+    }
+
+
+    .navbar.active {
+
+        display: flex;
+
+    }
+
+
+    .nav-link {
+
+        padding: 13px 0;
+
+    }
+
+
+    .theme-toggle {
+
+        margin-top: 10px;
+
+    }
+
+
+    .hero {
+
+        padding: 70px 0;
+
+    }
+
+
+    .hero-text h1 {
+
+        letter-spacing: -1px;
+
+    }
+
+
+    .section {
+
+        padding: 75px 0;
+
+    }
+
+
+    .persona-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .summary-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .footer-content {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+/* ================= RESPONSIVE 480px ================= */
+
+@media (max-width: 480px) {
+
+    .container {
+
+        width: 90%;
+
+    }
+
+
+    .hero-text h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .hero-text p {
+
+        font-size: 16px;
+
+    }
+
+
+    .goals-grid,
+    .pain-grid,
+    .motivation-grid,
+    .insights-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .profile-details {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .persona-card,
+    .goal-card,
+    .pain-card,
+    .motivation-card,
+    .insight-card {
+
+        padding: 24px;
+
+    }
+
+
+    .summary-card {
+
+        padding: 30px 24px;
+
+    }
+
+
+    .summary-card h2 {
+
+        font-size: 25px;
+
+    }
+
+}
